@@ -10,7 +10,7 @@ Transform ResX files into strongly typed classes via T4
    - From inside .cshtml & .aspx files
      - ``@Resources.User.Pseudo`` / ``<%= Resources.User.Pseudo %>``
 - Bind your translations directly to a ViewModel
-  - ``[Display(Name = "Pseudo", ResourceType = typeof(Resources.User.Pseudo))]``
+  - ``[Display(Name = "Pseudo", ResourceType = typeof(Resources.User))]``
 - Use it again in your dlls to return localized error messages
   - ``return Resources.User.RegisterError;``
 
