@@ -21,9 +21,16 @@ Transform ResX files into strongly typed classes via T4
 - Dynamically replace variables
   - ``Register with [[Domain]]``
   - ``[[Brand]] announces new feature``
+
+####Export & Reuse your translations
 - Pull translations directly into localized JavaScript files
   - ``<script src="/GetResources?ns=Resources.User"></script>``
+- Grab a series of translations as collection
+  - ``Dictionary<string string> items = GetResourceSetAsDictionary("Resources.User");``
 
+- - -
 
 #### 2012-11-28
-Currently rewriting/cleaning up code, should be out within a week or so ;-)
+Currently rewriting/cleaning up code, should be out within a week or so
+
+_Yes, all the above functionaly is existant & working ;-)_
