@@ -2,16 +2,10 @@ T4ResX
 ======
 Transform ResX files into strongly typed classes via T4
 
-#### 2012-12-05
-First commit. [See docs](https://github.com/itechnology/T4ResX/wiki) .. in progress
+####[See docs](https://github.com/itechnology/T4ResX/wiki)
 
-Sample site up on Windows Azure @ [t4resx.azurewebsites.net](http://t4resx.azurewebsites.net/)
 
-If it's down, it might be normal ..running on a free instance with daily resource limits
-
----
-
-####Have a project that uses ResX files ?
+##Have a project that uses ResX files ?
 
 - Transform all ResX files in a project into a strongly typed, compiled assembly
 - Access your translations directly
@@ -41,3 +35,10 @@ If it's down, it might be normal ..running on a free instance with daily resourc
   - ``Dictionary<string, Dictionary<string string>> items = GetResourcesByNameSpace(".*");``
   - ``Dictionary<string, Dictionary<string string>> items = GetResourcesByNameSpace("Resources.User.*");``
   - ``Dictionary<string, Dictionary<string string>> items = GetResourcesByNameSpace("^User|Branding");``
+
+##Updates
+
+###0.99 / 2012-12-05
+* First commit.
+* Sample site up on Windows Azure @ [t4resx.azurewebsites.net](http://t4resx.azurewebsites.net/)
+* If it's down, it might be normal ..running on a free instance with daily resource limits
