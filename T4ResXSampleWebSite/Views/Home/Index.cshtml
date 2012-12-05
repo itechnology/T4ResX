@@ -1,0 +1,45 @@
+﻿<!Doctype html>
+@model T4ResX.Sample.WebSite.BLL.Models.User
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>@T4ResX.Sample.Localization.Branding.Title</title>
+        <style>
+            body {
+                width: 920px;
+                margin: 0 auto;
+            }
+            .input-validation-error {
+                background-color: #FFEFEF;
+                border: 1px dotted black;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>@T4ResX.Sample.Localization.Branding.Welcome</h2>             
+        @Html.ValidationSummary()
+        <form method="post" action="/home/index">
+            
+            <fieldset>
+                <legend>@T4ResX.Sample.Localization.Branding.Title</legend>
+                <label for="Pseudo">@T4ResX.Sample.Localization.Models.User.Pseudo</label><br />
+                @Html.TextBoxFor(m => m.Pseudo)                
+            </fieldset>
+
+            <input type="submit" value="@T4ResX.Sample.Localization.Branding.Submit"/>
+        </form>
+        
+        <br />
+        <fieldset>
+            <legend>@T4ResX.Sample.Localization.Branding.JavaScriptTitle</legend>
+            <p><button onclick="alert(T4ResX.Localization.Branding.Title)">T4ResX.Localization.Branding.Title</button></p>
+            <p><button onclick="alert(T4ResX.Localization.Branding.Welcome)">T4ResX.Localization.Branding.Welcome</button></p>
+        </fieldset>
+        
+        <p>
+            <small><em>@T4ResX.Sample.Localization.Branding.Info</em></small>
+        </p>
+   
+        <script src="/home/GetNameSpaceAsJs?ns=^Branding"></script>
+    </body>
+</html>

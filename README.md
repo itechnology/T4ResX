@@ -7,7 +7,7 @@ First commit. Now getting some docs ready !
 
 Sample site up on Windows Azure @ [t4resx.azurewebsites.net](http://t4resx.azurewebsites.net/)
 
-If it's, it might be normal ..it's running on a free instance with daily ressource limits
+If it's down, it might be normal ..running on a free instance with daily resource limits
 
 ---
 
@@ -25,10 +25,10 @@ If it's, it might be normal ..it's running on a free instance with daily ressour
 ####Use variables inside your ResX files
 - Format an error messages
   - .resx: ``Welcome {0}``
-  - .cs &nbsp; : ``Resources.User.Welcome(Pseudo)``
+  - .cs &nbsp; : ``return Resources.User.Welcome("Pseudo")``
 - Dynamically replace variables
-  - ``Register with {Domain}``
-  - ``{Brand} announces new feature for {0}``
+  - ``Register with {DOMAIN}``
+  - ``{BRAND} announces new feature for {0}``
 
 ####Export & Reuse your translations
 - Pull translations directly into localized JavaScript files
