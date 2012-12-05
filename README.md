@@ -3,7 +3,7 @@ T4ResX
 Transform ResX files into strongly typed classes via T4
 
 #### 2012-12-05
-First commit. Now getting some docs ready !
+First commit. [See docs](https://github.com/itechnology/T4ResX/wiki) .. in progress
 
 Sample site up on Windows Azure @ [t4resx.azurewebsites.net](http://t4resx.azurewebsites.net/)
 
