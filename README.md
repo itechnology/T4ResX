@@ -2,6 +2,14 @@ T4ResX
 ======
 Transform ResX files into strongly typed classes via T4
 
+#### 2012-12-05
+First commit. Now getting some docs ready !
+
+Sample site up on Windows Azure @ [t4resx.azurewebsites.net](http://t4resx.azurewebsites.net/)
+
+If it's, it might be normal ..it's running on a free instance with daily ressource limits
+
+---
 
 ####Have a project that uses ResX files ?
 
@@ -19,18 +27,17 @@ Transform ResX files into strongly typed classes via T4
   - .resx: ``Welcome {0}``
   - .cs &nbsp; : ``Resources.User.Welcome(Pseudo)``
 - Dynamically replace variables
-  - ``Register with [[Domain]]``
-  - ``[[Brand]] announces new feature``
+  - ``Register with {Domain}``
+  - ``{Brand} announces new feature for {0}``
 
 ####Export & Reuse your translations
 - Pull translations directly into localized JavaScript files
-  - ``<script src="/GetResources?ns=Resources.User"></script>``
+  - ``<script src="/GetNameSpaceAsJs?ns=Resources.User"></script>``
+- Or assign inline
+  - ``var localized = GetNameSpaceAsJson("Resources.User");``
 - Grab a series of translations as collection
-  - ``Dictionary<string string> items = GetResourceSetAsDictionary("Resources.User");``
-
-- - -
-
-#### 2012-11-28
-Currently rewriting/cleaning up code, should be out within a week or so
-
-_Yes, all the above functionaly is existant & working ;-)_
+  - ``Dictionary<string, Dictionary<string string>> items = GetResourcesByNameSpace("Resources.User");``
+- Or do just grab bits & pieces
+  - ``Dictionary<string, Dictionary<string string>> items = GetResourcesByNameSpace(".*");``
+  - ``Dictionary<string, Dictionary<string string>> items = GetResourcesByNameSpace("Resources.User.*");``
+  - ``Dictionary<string, Dictionary<string string>> items = GetResourcesByNameSpace("^User|Branding");``

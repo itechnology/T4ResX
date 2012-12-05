@@ -1,0 +1,6 @@
+*/Properties/PublishProfiles*/
+.PublishSettings
+*/obj*/
+*/bin*/
+*.suo
+*.user
