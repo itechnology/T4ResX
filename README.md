@@ -3,12 +3,14 @@ T4ResX
 Transform ResX files into strongly typed classes via T4
 
 ####[Consult Documentation](https://github.com/itechnology/T4ResX/wiki)
+* [Sample WebSite](http://t4resx.azurewebsites.net)
+  * Localized HTML, JavaScript & Code Behind
 
 ##Download
  * [Nuget Package](https://nuget.org/packages/T4ResX)
  * [Visual Studio Extension](http://visualstudiogallery.msdn.microsoft.com/8b008710-a354-4503-b70d-784493114d5d)
  * [Single File](https://raw.github.com/itechnology/T4ResX/master/T4ResX.tt)
- * [Sample Solution](https://github.com/itechnology/T4ResX/archive/master.zip)
+ * [Sample Solution](https://github.com/itechnology/T4ResX/archive/master.zip) 
 
 
 #Overview
