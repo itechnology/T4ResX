@@ -25,7 +25,7 @@ Transform ResX files into strongly typed classes via T4
   - ``return Resources.User.RegisterError;``
 
 ####Use variables inside your ResX files
-- Format an error messages
+- Format various messages
   - .resx: ``Welcome {0}``
      - .cs: ``return Resources.User.Welcome("Robert")``
      - result: ``Welcome Robert``
