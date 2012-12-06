@@ -2,16 +2,24 @@ T4ResX
 ======
 Transform ResX files into strongly typed classes via T4
 
-####[See docs](https://github.com/itechnology/T4ResX/wiki)
+####[Consult Documentation](https://github.com/itechnology/T4ResX/wiki)
 
+##Download
+ * [Nuget Package](https://nuget.org/packages/T4ResX)
+ * [Visual Studio Extension](http://visualstudiogallery.msdn.microsoft.com/8b008710-a354-4503-b70d-784493114d5d)
+ * [Single File](https://raw.github.com/itechnology/T4ResX/master/T4ResX.tt)
+ * [Sample Solution](https://github.com/itechnology/T4ResX/archive/master.zip)
+
+
+#Overview
 
 ##Have a project that uses ResX files ?
 
-- Transform all ResX files in a project into a strongly typed, compiled assembly
-- Access your translations directly
+- Transform ResX files in a project into a strongly typed assembly
+- Access your translations
    - From inside .cshtml & .aspx files
      - ``@Resources.User.Pseudo`` / ``<%= Resources.User.Pseudo %>``
-- Bind your translations directly to a ViewModel
+- Bind your translations to a ViewModel
   - ``[Display(Name = "Pseudo", ResourceType = typeof(Resources.User))]``
 - Use it again in your dlls to return localized error messages
   - ``return Resources.User.RegisterError;``
@@ -19,10 +27,15 @@ Transform ResX files into strongly typed classes via T4
 ####Use variables inside your ResX files
 - Format an error messages
   - .resx: ``Welcome {0}``
-  - .cs &nbsp; : ``return Resources.User.Welcome("Pseudo")``
+     - .cs: ``return Resources.User.Welcome("Robert")``
+     - result: ``Welcome Robert``
 - Dynamically replace variables
-  - ``Register with {DOMAIN}``
-  - ``{BRAND} announces new feature for {0}``
+  - .resx: ``Register with {DOMAIN}``
+     - .cs: ``return Resources.Branding.Register;`` 
+     - result: ``Register with www.i-technology.net`` 
+  - .resx: ``{BRAND} announces new feature for {0}``
+     - .cs: ``return Resources.Branding.Feature("T4")``
+     - result: ``I-Technology announces new feature for T4``
 
 ####Export & Reuse your translations
 - Pull translations directly into localized JavaScript files
