@@ -64,4 +64,8 @@ All resource keys are accessible by ResourceKey constants. So you can use compil
 instead of old version  
 ``[Required(ErrorMessageResourceName = "RequiredError", ErrorMessageResourceType = typeof(Resources.User))]``
 
+###0.992 / 2013-09-05 / author: dhlavaty
+Better c# XML documentation comments normalization, so you can use html tags in your localized texts
+
+
 The end
