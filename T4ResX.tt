@@ -23,7 +23,7 @@
  * Author  Robert Hoffmann (itechnology)
  * License MIT / http://bit.ly/mit-license
  * 
- * Version 1.00
+ * Version 0.992
  * https://github.com/itechnology/T4ResX
  */
 #>
@@ -269,10 +269,10 @@ namespace <#= T4ResXHelpers.Current.NormalizeString(item.NameSpace)#>  {
 		///<summary>
 		///    <list type='bullet'>
 		///        <item>
-		///            <description><#= item.Value.Replace("\r", "").Replace("\n", " ")#></description>
+		///            <description><#= T4ResXHelpers.Current.NormalizeCSharpComment(item.Value)#></description>
 		///        </item>
 		///        <item>
-		///            <description><#= item.Comment.Replace("\r", "").Replace("\n", " ")#></description>
+		///            <description><#= T4ResXHelpers.Current.NormalizeCSharpComment(item.Comment)#></description>
 		///        </item>
 		///    </list>
 		///</summary>
@@ -284,15 +284,21 @@ namespace <#= T4ResXHelpers.Current.NormalizeString(item.NameSpace)#>  {
         ///<summary>
         ///    <list type='bullet'>
         ///        <item>
-        ///            <description><#= item.Value.Replace("\r", "").Replace("\n", " ")#></description>
+        ///            <description><#= T4ResXHelpers.Current.NormalizeCSharpComment(item.Value)#></description>
         ///        </item>
         ///        <item>
-        ///            <description><#= item.Comment.Replace("\r", "").Replace("\n", " ")#></description>
+        ///            <description><#= T4ResXHelpers.Current.NormalizeCSharpComment(item.Comment)#></description>
         ///        </item>
         ///    </list>
 		///</summary>
 		[Utilities.Localized]
-		public static string <#= T4ResXHelpers.Current.NormalizeItem(item.Key, false)#> { get { return GetResourceString("<#=item.Key#>"); } }
+		public static string <#= T4ResXHelpers.Current.NormalizeItem(item.Key, false)#> { get { return GetResourceString(<#=T4ResXHelpers.Current.NormalizeItem(item.Key, false)#>Key); } }
+
+		/// <summary>
+		/// Resource key for <see cref="<#= T4ResXHelpers.Current.NormalizeItem(item.Key, false)#>"/>
+		/// You can use it e.g. in validation attributes for <see cref="System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessageResourceName"/> parameter.
+		/// </summary>
+		public const string <#=T4ResXHelpers.Current.NormalizeItem(item.Key, false)#>Key = "<#=item.Key#>";
 
 		<# 
 		if ((T4ResXHelpers.Current.GetType(item.Comment) & T4ResXHelpers.ResxType.Constant) == T4ResXHelpers.ResxType.Constant) {	
@@ -301,10 +307,10 @@ namespace <#= T4ResXHelpers.Current.NormalizeString(item.NameSpace)#>  {
         ///<summary>
         ///    <list type='bullet'>
         ///        <item>
-        ///            <description><#= item.Value.Replace("\r", "").Replace("\n", " ")#></description>
+        ///            <description><#= T4ResXHelpers.Current.NormalizeCSharpComment(item.Value)#></description>
         ///        </item>
         ///        <item>
-        ///            <description><#= item.Comment.Replace("\r", "").Replace("\n", " ")#></description>
+        ///            <description><#= T4ResXHelpers.Current.NormalizeCSharpComment(item.Comment)#></description>
         ///        </item>
         ///        <item>
         ///            <description>
@@ -478,6 +484,15 @@ namespace <#= T4ResXHelpers.Current.NormalizeString(item.NameSpace)#>  {
 
             return s.Replace("#", isClass ? "." : "_");
         }
+
+		/// <summary>
+        /// Normalizes string, so it can be safely used in C# XML documentation comments
+        /// </summary>
+        public string NormalizeCSharpComment(string comment)
+		{
+			// This is practically same as System.Web.HttpUtility.HtmlEncode(), but you dont need System.Web assembly
+			return System.Security.SecurityElement.Escape(comment.Replace("\r", "").Replace("\n", " "));
+		}
 
         #region ResXLoading
         public static void AddResX(string projectPath, string rootNameSpace, string itemPath, List<ResXItem> items)

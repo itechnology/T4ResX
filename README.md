@@ -57,3 +57,15 @@ Transform ResX files into strongly typed classes via T4
 * First commit.
 * Sample site up on Windows Azure @ [t4resx.azurewebsites.net](http://t4resx.azurewebsites.net/)
 * If it's down, it might be normal ..running on a free instance with daily resource limits
+
+###0.991 / 2013-08-21 / author: dhlavaty
+All resource keys are accessible by ResourceKey constants. So you can use compiler type checking for validation attributes:
+``[Required(ErrorMessageResourceName = Resources.User.RequiredErrorKey, ErrorMessageResourceType = typeof(Resources.User))]``  
+instead of old version  
+``[Required(ErrorMessageResourceName = "RequiredError", ErrorMessageResourceType = typeof(Resources.User))]``
+
+###0.992 / 2013-09-05 / author: dhlavaty
+Better c# XML documentation comments normalization, so you can use html tags in your localized texts
+
+
+The end
